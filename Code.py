@@ -2,7 +2,6 @@
 
 import string
 import numpy as np
-import typing
 
 def toNum(text):
     alpha = string.ascii_lowercase
@@ -29,6 +28,9 @@ class Code(object):
     def __init__ (self, plain_text):
         self.code = toNum(plain_text)
 
+    def copy(self):
+        return Code(toText(self.code))
+
     def add(self, value: int):
         self.code += value*np.ones(len(self.code),dtype=np.int64)
         self.code = self.code % 26
@@ -40,6 +42,9 @@ class Code(object):
             self.code = self.code % 26
 
     def append(self, value):
+        print(self.code)
+        print(value.code)
+        print(np.append(self.code, value.code))
         self.code = np.append(self.code, value.code)
 
     def print(self):
