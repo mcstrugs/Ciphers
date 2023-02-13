@@ -34,18 +34,21 @@ class Code(object):
     def add(self, value: int):
         self.code += value*np.ones(len(self.code),dtype=np.int64)
         self.code = self.code % 26
+        return self.copy()
 
     def add_code(self, value):
-        print(type(value))
         for i in range(min(len(value.code),len(self.code))):
             self.code[i] += value.code[i]
             self.code = self.code % 26
+        return self.copy()
+    
+    def scale(self, value):
+        self.code = value*self.code
+        self.code = self.code % 26
 
     def append(self, value):
-        print(self.code)
-        print(value.code)
-        print(np.append(self.code, value.code))
         self.code = np.append(self.code, value.code)
+        return self.copy()
 
     def print(self):
         print(toText(self.code))
