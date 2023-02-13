@@ -28,8 +28,15 @@ class Code(object):
     def __init__ (self, plain_text):
         self.code = toNum(plain_text)
 
+    def print(self):
+        print(toText(self.code))
+
     def copy(self):
         return Code(toText(self.code))
+
+    def append(self, value):
+        self.code = np.append(self.code, value.code)
+        return self.copy()
 
     def add(self, value: int):
         self.code += value*np.ones(len(self.code),dtype=np.int64)
@@ -46,10 +53,3 @@ class Code(object):
         self.code = value*self.code
         self.code = self.code % 26
 
-    def append(self, value):
-        self.code = np.append(self.code, value.code)
-        return self.copy()
-
-    def print(self):
-        print(toText(self.code))
-        

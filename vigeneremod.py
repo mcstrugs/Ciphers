@@ -5,6 +5,8 @@ import copy
 
 key = Code("red")
 plain = Code("thequickfoxjumped")
+ciphertext = "IYMYSILONRFNCQXQJEDSHBUIBCJUZBOLFQYSCHATPEQGQJEJNGNXZWHHGWFSUKULJQACZKKJOAAHGKEMTAFGMKVRDOPXNEHEKZNKFSKIFRQVHHOVXINPHMRTJPYWQGJWPUUVKFPOAWPMRKKQZWLQDYAZDRMLPBJKJOBWIWPSEPVVQMBCRYVCRUZAAOUMBCHDAGDIEMSZFZHALIGKEMJJFPCIWKRMLMPINAYOFIREAOLDTHITDVRMSE".lower()
+cipher = Code(ciphertext)
 
 def extended_key(key, length): # length gives number of keys to add
     newkey = key.copy()
@@ -24,11 +26,11 @@ def decrypt(cipher,key):
     ct = cipher.copy() #always make copy
     length = len(ct.code) // len(key.code) + 1
     extkey = extended_key(key,length)
-    extkey.scale(-1)
+    extkey.scale(-1) # subtract to decrypt
     return ct.add_code(extkey)
 
-cipher = encrypt(plain,key)
-cipher.print()
+#cipher = encrypt(plain,key)
+#cipher.print()
 
-ptest = decrypt(cipher,key)
-ptest.print()
+#ptest = decrypt(cipher,key)
+#ptest.print()
