@@ -34,3 +34,22 @@ def decrypt(cipher,key):
 
 #ptest = decrypt(cipher,key)
 #ptest.print()
+def findIndexes(cipher, text):
+    for i in range(15):
+        try:
+            index = cipher.text().index(text.text())
+        except:
+            print("not found")
+        print(index)
+        text.add(1)
+        text.print()
+    
+print(np.gcd(87,167))    
+
+for i in range(len(ciphertext) - 3):
+    text = ciphertext[i:i+3]
+    findIndexes(cipher,Code(text))
+
+# 50, 65
+# 70, 105
+decrypt(cipher,Code("prime")).print()

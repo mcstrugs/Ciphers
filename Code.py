@@ -31,6 +31,9 @@ class Code(object):
     def print(self):
         print(toText(self.code))
 
+    def text(self):
+        return toText(self.code)
+
     def copy(self):
         return Code(toText(self.code))
 
