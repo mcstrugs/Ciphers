@@ -74,8 +74,8 @@ def P(i):
         25: 0.001,
     }
     return mydict[i]
-    
-print(np.gcd(87,167))    
+
+print(np.gcd(87,167))
 
 #for i in range(len(ciphertext) - 3):
 #    text = ciphertext[i:i+3]
@@ -110,10 +110,11 @@ def mG(my_code,g):
 #        total += p_i * f_i / n
 #    return total
 
-for g in range(26):
-    print(g, ": ", mG(my_code,g))
+#for g in range(26):
+#    print(g, ": ", mG(my_code,g))
 
 # 15,17,8,12,4
+encrypt(plain,key).print()
 
 print(toText([15,17,8,12,4]))
 # 'prime'
@@ -121,3 +122,14 @@ print(toText([15,17,8,12,4]))
 # 50, 65
 # 70, 105
 decrypt(cipher,Code("prime")).print()
+
+# themostfamouscryptologist
+# inhistoryoweshisfamelesst
+# owhathedidthantowhathesai
+# dandtothesensationalwayi
+# nwhichhesaiditandthiswas
+# mostperfectlyincharacter
+# forherbertosborneyardley
+# wasperhapsthemostengagin
+# garticulateandtechnicolo
+# redpersonalityinthebusines
